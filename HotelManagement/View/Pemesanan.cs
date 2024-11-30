@@ -7,12 +7,14 @@ namespace HotelManagement.View
     public partial class TxtBoxKodePemesanan : UserControl
     {
         PemesananController pemesananController;
+        Validation validation;
         public event Action DataPemesananChanged;
 
         public TxtBoxKodePemesanan()
         {
             InitializeComponent();
             pemesananController = new PemesananController();
+            validation = new Validation();
         }
 
         private void Pemesanan_Load(object sender, EventArgs e)
@@ -45,7 +47,7 @@ namespace HotelManagement.View
             TxtBoxNoKamar.Text = DGV_Pemesanan.CurrentRow.Cells[6].Value.ToString();
             TxtBoxTipeRoom.Text = DGV_Pemesanan.CurrentRow.Cells[7].Value.ToString();
             TxtBoxStatusRoom.Text = DGV_Pemesanan.CurrentRow.Cells[8].Value.ToString();
-            
+
         }
 
         private void BtnClearPemesanan_Click(object sender, EventArgs e)
@@ -76,92 +78,111 @@ namespace HotelManagement.View
                 try
                 {
                     pemesananController.DeletePemesanan(kodePemesanan);
-                    
-                    ShowTable(); 
-                    BtnClearPemesanan_Click(sender, e); 
+
+                    ShowTable();
+                    BtnClearPemesanan_Click(sender, e);
                     DataPemesananChanged?.Invoke();
                 }
                 catch (Exception ex)
-                { 
+                {
                     MessageBox.Show("Kesalahan saat menghapus data pemesanan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
+        private bool VerifyInput()
+        {
+            if (!validation.ValidasiNama(TextBoxNamaTamu.Text) || !validation.ValidasiNohp(TxtBoxNoHp.Text))
+            {
+                return false;
+            }
 
+            if (DateTimePicker_masuk.Value < DateTime.Now)
+            {
+                MessageBox.Show("Tanggal pemesanan tidak boleh tanggal sebelum tanggal hari ini.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
         private void BtnAddPemesanan_Click(object sender, EventArgs e)
         {
-            DateTime waktuMasuk = DateTimePicker_masuk.Value;
-            DateTime waktuKeluar = DateTimePicker_keluar.Value;
-            string namaTamu = TextBoxNamaTamu.Text.Trim();
-            string noHp = TxtBoxNoHp.Text.Trim();
-            string noKamar = TxtBoxNoKamar.Text.Trim();
+            if (VerifyInput())
+            {
+                DateTime waktuMasuk = DateTimePicker_masuk.Value;
+                DateTime waktuKeluar = DateTimePicker_keluar.Value;
+                string namaTamu = TextBoxNamaTamu.Text.Trim();
+                string noHp = TxtBoxNoHp.Text.Trim();
+                string noKamar = TxtBoxNoKamar.Text.Trim();
 
-            if (string.IsNullOrEmpty(namaTamu) || string.IsNullOrEmpty(noHp) || string.IsNullOrEmpty(noKamar))
-            {
-                MessageBox.Show("Semua field harus diisi!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (waktuMasuk >= waktuKeluar)
-            {
-                MessageBox.Show("Waktu keluar harus lebih besar dari waktu masuk!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (pemesananController.CekKamarTerpakai(noKamar))
-            {
-                MessageBox.Show("Nomor kamar sudah digunakan! Silakan pilih nomor kamar yang lain.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            try
-            {
-                pemesananController.AddPemesanan(waktuMasuk, waktuKeluar, namaTamu, noHp, noKamar);
+                if (string.IsNullOrEmpty(namaTamu) || string.IsNullOrEmpty(noHp) || string.IsNullOrEmpty(noKamar))
+                {
+                    MessageBox.Show("Semua field harus diisi!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (waktuMasuk >= waktuKeluar)
+                {
+                    MessageBox.Show("Waktu keluar harus lebih besar dari waktu masuk!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (pemesananController.CekKamarTerpakai(noKamar))
+                {
+                    MessageBox.Show("Nomor kamar sudah digunakan! Silakan pilih nomor kamar yang lain.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                try
+                {
+                    pemesananController.AddPemesanan(waktuMasuk, waktuKeluar, namaTamu, noHp, noKamar);
 
-                ShowTable();
-                BtnClearPemesanan_Click(sender, e);
-                DataPemesananChanged?.Invoke();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(" " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ShowTable();
+                    BtnClearPemesanan_Click(sender, e);
+                    DataPemesananChanged?.Invoke();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(" " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
         private void BtnUpdatePemesanan_Click(object sender, EventArgs e)
         {
-            string kodePemesanan = TextBoxKodePemesanan.Text.Trim();
-            DateTime waktuMasuk = DateTimePicker_masuk.Value;
-            DateTime waktuKeluar = DateTimePicker_keluar.Value;
-            string namaTamu = TextBoxNamaTamu.Text.Trim();
-            string noHp = TxtBoxNoHp.Text.Trim();
-            string noKamar = TxtBoxNoKamar.Text.Trim();
+            if (VerifyInput())
+            {
+                string kodePemesanan = TextBoxKodePemesanan.Text.Trim();
+                DateTime waktuMasuk = DateTimePicker_masuk.Value;
+                DateTime waktuKeluar = DateTimePicker_keluar.Value;
+                string namaTamu = TextBoxNamaTamu.Text.Trim();
+                string noHp = TxtBoxNoHp.Text.Trim();
+                string noKamar = TxtBoxNoKamar.Text.Trim();
 
-            if (string.IsNullOrEmpty(kodePemesanan) || string.IsNullOrEmpty(namaTamu) || string.IsNullOrEmpty(noHp) || string.IsNullOrEmpty(noKamar))
-            {
-                MessageBox.Show("Semua field harus diisi!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (waktuMasuk >= waktuKeluar)
-            {
-                MessageBox.Show("Waktu keluar harus lebih besar dari waktu masuk!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (pemesananController.CekKamarTerpakai(noKamar) && noKamar != DGV_Pemesanan.CurrentRow.Cells[6].Value.ToString())
-            {
-                MessageBox.Show("Nomor kamar sudah digunakan! Silakan pilih nomor kamar yang lain.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            try
-            {
-                pemesananController.UpdatePemesanan(kodePemesanan, waktuMasuk, waktuKeluar, namaTamu, noHp, noKamar);
+                if (string.IsNullOrEmpty(kodePemesanan) || string.IsNullOrEmpty(namaTamu) || string.IsNullOrEmpty(noHp) || string.IsNullOrEmpty(noKamar))
+                {
+                    MessageBox.Show("Semua field harus diisi!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (waktuMasuk >= waktuKeluar)
+                {
+                    MessageBox.Show("Waktu keluar harus lebih besar dari waktu masuk!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (pemesananController.CekKamarTerpakai(noKamar) && noKamar != DGV_Pemesanan.CurrentRow.Cells[6].Value.ToString())
+                {
+                    MessageBox.Show("Nomor kamar sudah digunakan! Silakan pilih nomor kamar yang lain.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                try
+                {
+                    pemesananController.UpdatePemesanan(kodePemesanan, waktuMasuk, waktuKeluar, namaTamu, noHp, noKamar);
 
-                ShowTable();
-                BtnClearPemesanan_Click(sender, e);
-                DataPemesananChanged?.Invoke();
+                    ShowTable();
+                    BtnClearPemesanan_Click(sender, e);
+                    DataPemesananChanged?.Invoke();
 
-                MessageBox.Show("Data pemesanan berhasil diperbarui!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Kesalahan saat memperbarui pemesanan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Data pemesanan berhasil diperbarui!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Kesalahan saat memperbarui pemesanan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

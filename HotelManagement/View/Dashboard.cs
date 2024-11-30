@@ -14,8 +14,27 @@ namespace HotelManagement.View
             AdminConroller = new LoginController();
             RoomsController = new RoomsController();
         }
-
+        private Timer refreshTimer;
         private void Dashboard_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                UpdateLabels();
+                refreshTimer = new Timer();
+                refreshTimer.Interval = 5000;
+                refreshTimer.Tick += RefreshTimer_Tick;
+                refreshTimer.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void RefreshTimer_Tick(object sender, EventArgs e)
+        {
+            UpdateLabels();
+        }
+        private void UpdateLabels()
         {
             try
             {
@@ -24,7 +43,7 @@ namespace HotelManagement.View
             }
             catch (Exception ex)
             {
-                MessageBox.Show("" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

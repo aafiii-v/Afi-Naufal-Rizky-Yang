@@ -87,6 +87,7 @@
     <Compile Include="Controller\CustomerController.cs" />
     <Compile Include="Controller\PemesananController.cs" />
     <Compile Include="Controller\RoomsController.cs" />
+    <Compile Include="Controller\Validation.cs" />
     <Compile Include="View\AdminRooms.cs">
       <SubType>UserControl</SubType>
     </Compile>

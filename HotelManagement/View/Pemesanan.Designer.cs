@@ -32,6 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GroupBoxPemesanan = new Guna.UI2.WinForms.Guna2GroupBox();
             this.PanelSelectPemesanan = new Guna.UI2.WinForms.Guna2Panel();
+            this.TxtBoxStatusRoom = new Guna.UI2.WinForms.Guna2TextBox();
+            this.TxtBoxTipeRoom = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelStatusRoom = new System.Windows.Forms.Label();
             this.LabelNoKamar = new System.Windows.Forms.Label();
             this.TxtBoxNoKamar = new Guna.UI2.WinForms.Guna2TextBox();
@@ -53,8 +55,6 @@
             this.LabelWaktuMasuk = new System.Windows.Forms.Label();
             this.LabelKodePemesanan = new System.Windows.Forms.Label();
             this.DGV_Pemesanan = new System.Windows.Forms.DataGridView();
-            this.TxtBoxTipeRoom = new Guna.UI2.WinForms.Guna2TextBox();
-            this.TxtBoxStatusRoom = new Guna.UI2.WinForms.Guna2TextBox();
             this.GroupBoxPemesanan.SuspendLayout();
             this.PanelSelectPemesanan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Pemesanan)).BeginInit();
@@ -74,7 +74,7 @@
             this.GroupBoxPemesanan.Name = "GroupBoxPemesanan";
             this.GroupBoxPemesanan.Size = new System.Drawing.Size(1275, 830);
             this.GroupBoxPemesanan.TabIndex = 2;
-            this.GroupBoxPemesanan.Text = "Booking";
+            this.GroupBoxPemesanan.Text = "Pemesanan";
             // 
             // PanelSelectPemesanan
             // 
@@ -107,6 +107,60 @@
             this.PanelSelectPemesanan.Name = "PanelSelectPemesanan";
             this.PanelSelectPemesanan.Size = new System.Drawing.Size(1213, 278);
             this.PanelSelectPemesanan.TabIndex = 49;
+            // 
+            // TxtBoxStatusRoom
+            // 
+            this.TxtBoxStatusRoom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtBoxStatusRoom.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TxtBoxStatusRoom.BorderRadius = 5;
+            this.TxtBoxStatusRoom.BorderThickness = 2;
+            this.TxtBoxStatusRoom.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TxtBoxStatusRoom.DefaultText = "";
+            this.TxtBoxStatusRoom.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TxtBoxStatusRoom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TxtBoxStatusRoom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TxtBoxStatusRoom.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TxtBoxStatusRoom.Enabled = false;
+            this.TxtBoxStatusRoom.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TxtBoxStatusRoom.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtBoxStatusRoom.ForeColor = System.Drawing.Color.Black;
+            this.TxtBoxStatusRoom.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TxtBoxStatusRoom.Location = new System.Drawing.Point(862, 114);
+            this.TxtBoxStatusRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtBoxStatusRoom.Name = "TxtBoxStatusRoom";
+            this.TxtBoxStatusRoom.PasswordChar = '\0';
+            this.TxtBoxStatusRoom.PlaceholderText = "";
+            this.TxtBoxStatusRoom.SelectedText = "";
+            this.TxtBoxStatusRoom.Size = new System.Drawing.Size(333, 32);
+            this.TxtBoxStatusRoom.TabIndex = 73;
+            // 
+            // TxtBoxTipeRoom
+            // 
+            this.TxtBoxTipeRoom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtBoxTipeRoom.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TxtBoxTipeRoom.BorderRadius = 5;
+            this.TxtBoxTipeRoom.BorderThickness = 2;
+            this.TxtBoxTipeRoom.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TxtBoxTipeRoom.DefaultText = "";
+            this.TxtBoxTipeRoom.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TxtBoxTipeRoom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TxtBoxTipeRoom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TxtBoxTipeRoom.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TxtBoxTipeRoom.Enabled = false;
+            this.TxtBoxTipeRoom.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TxtBoxTipeRoom.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtBoxTipeRoom.ForeColor = System.Drawing.Color.Black;
+            this.TxtBoxTipeRoom.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TxtBoxTipeRoom.Location = new System.Drawing.Point(862, 64);
+            this.TxtBoxTipeRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtBoxTipeRoom.Name = "TxtBoxTipeRoom";
+            this.TxtBoxTipeRoom.PasswordChar = '\0';
+            this.TxtBoxTipeRoom.PlaceholderText = "";
+            this.TxtBoxTipeRoom.SelectedText = "";
+            this.TxtBoxTipeRoom.Size = new System.Drawing.Size(333, 32);
+            this.TxtBoxTipeRoom.TabIndex = 72;
             // 
             // labelStatusRoom
             // 
@@ -468,7 +522,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Teal;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
@@ -477,7 +531,7 @@
             this.DGV_Pemesanan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -491,60 +545,6 @@
             this.DGV_Pemesanan.Size = new System.Drawing.Size(1213, 431);
             this.DGV_Pemesanan.TabIndex = 39;
             this.DGV_Pemesanan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Pemesanan_CellClick);
-            // 
-            // TxtBoxTipeRoom
-            // 
-            this.TxtBoxTipeRoom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtBoxTipeRoom.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TxtBoxTipeRoom.BorderRadius = 5;
-            this.TxtBoxTipeRoom.BorderThickness = 2;
-            this.TxtBoxTipeRoom.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtBoxTipeRoom.DefaultText = "";
-            this.TxtBoxTipeRoom.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.TxtBoxTipeRoom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.TxtBoxTipeRoom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TxtBoxTipeRoom.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TxtBoxTipeRoom.Enabled = false;
-            this.TxtBoxTipeRoom.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TxtBoxTipeRoom.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtBoxTipeRoom.ForeColor = System.Drawing.Color.Black;
-            this.TxtBoxTipeRoom.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TxtBoxTipeRoom.Location = new System.Drawing.Point(862, 64);
-            this.TxtBoxTipeRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.TxtBoxTipeRoom.Name = "TxtBoxTipeRoom";
-            this.TxtBoxTipeRoom.PasswordChar = '\0';
-            this.TxtBoxTipeRoom.PlaceholderText = "";
-            this.TxtBoxTipeRoom.SelectedText = "";
-            this.TxtBoxTipeRoom.Size = new System.Drawing.Size(333, 32);
-            this.TxtBoxTipeRoom.TabIndex = 72;
-            // 
-            // TxtBoxStatusRoom
-            // 
-            this.TxtBoxStatusRoom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtBoxStatusRoom.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TxtBoxStatusRoom.BorderRadius = 5;
-            this.TxtBoxStatusRoom.BorderThickness = 2;
-            this.TxtBoxStatusRoom.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtBoxStatusRoom.DefaultText = "";
-            this.TxtBoxStatusRoom.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.TxtBoxStatusRoom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.TxtBoxStatusRoom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TxtBoxStatusRoom.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TxtBoxStatusRoom.Enabled = false;
-            this.TxtBoxStatusRoom.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TxtBoxStatusRoom.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtBoxStatusRoom.ForeColor = System.Drawing.Color.Black;
-            this.TxtBoxStatusRoom.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TxtBoxStatusRoom.Location = new System.Drawing.Point(862, 114);
-            this.TxtBoxStatusRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.TxtBoxStatusRoom.Name = "TxtBoxStatusRoom";
-            this.TxtBoxStatusRoom.PasswordChar = '\0';
-            this.TxtBoxStatusRoom.PlaceholderText = "";
-            this.TxtBoxStatusRoom.SelectedText = "";
-            this.TxtBoxStatusRoom.Size = new System.Drawing.Size(333, 32);
-            this.TxtBoxStatusRoom.TabIndex = 73;
             // 
             // TxtBoxKodePemesanan
             // 

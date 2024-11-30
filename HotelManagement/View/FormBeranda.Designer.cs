@@ -177,7 +177,7 @@
             this.BtnDashboard.Name = "BtnDashboard";
             this.BtnDashboard.Size = new System.Drawing.Size(300, 60);
             this.BtnDashboard.TabIndex = 36;
-            this.BtnDashboard.Text = "Dashboard";
+            this.BtnDashboard.Text = "DASHBOARD";
             this.BtnDashboard.Click += new System.EventHandler(this.BtnDashboard_Click);
             // 
             // BtnCustomers
@@ -219,7 +219,7 @@
             this.BtnPemesanan.Name = "BtnPemesanan";
             this.BtnPemesanan.Size = new System.Drawing.Size(300, 60);
             this.BtnPemesanan.TabIndex = 34;
-            this.BtnPemesanan.Text = "BOOKING";
+            this.BtnPemesanan.Text = "PEMESANAN";
             this.BtnPemesanan.Click += new System.EventHandler(this.BtnPemesanan_Click);
             // 
             // BtnAdminControl

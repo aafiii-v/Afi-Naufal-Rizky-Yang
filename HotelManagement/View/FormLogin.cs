@@ -22,25 +22,46 @@ namespace HotelManagement
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            if ((TextBoxUsername.Text == "") || (TextBoxPassword.Text == ""))
+            if (string.IsNullOrWhiteSpace(TextBoxUsername.Text) || string.IsNullOrWhiteSpace(TextBoxPassword.Text))
             {
-                MessageBox.Show("Need login data", "Wrong Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Silakan masukkan data login!", "Login Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                string name = TextBoxUsername.Text;
-                string pass = TextBoxPassword.Text;
-                DataTable table = LoginControl.GetList(new MySqlConnector.MySqlCommand
-                    ("SELECT * FROM admin WHERE username = '" + name + "' AND passwordd = '" + pass + "'"));
-                if (table.Rows.Count > 0)
+                string username = TextBoxUsername.Text.Trim();
+                string password = TextBoxPassword.Text.Trim();
+
+                string query = "SELECT * FROM admin WHERE BINARY username = @username AND BINARY passwordd = @password";
+
+                using (var conn = LoginControl.GetConn())
                 {
-                    FormBeranda main = new FormBeranda();
-                    main.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("== Username or Password is Wrong ==", "Wrong Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    try
+                    {
+                        if (conn.State != ConnectionState.Open) conn.Open();
+                        using (var cmd = new MySqlConnector.MySqlCommand(query, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@username", username);
+                            cmd.Parameters.AddWithValue("@password", password);
+
+                            using (var reader = cmd.ExecuteReader())
+                            {
+                                if (reader.HasRows)
+                                {
+                                    FormBeranda main = new FormBeranda();
+                                    main.Show();
+                                    this.Hide();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Username atau Password salah!", "Login Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Terjadi kesalahan saat login: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
