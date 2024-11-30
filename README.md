@@ -2,7 +2,7 @@
 
 Proyek ini merupakan sistem manajemen hotel yang dibangun menggunakan teknologi .NET dengan Visual Studio. Aplikasi ini dirancang untuk membantu pengelolaan data hotel, termasuk pemesanan kamar, pengelolaan tamu, dan pengelolaan ketersediaan kamar.
 
-## Fitur Utama
+## Fitur Fitur
 - Memiliki login dan Register
 - Manajemen Tamu: Menyimpan data tamu seperti nama, dan informasi kontak.
 - Manajemen Pemesanan: Memasukkan data pemesanan kamar secara otomatis menggunakan kode unik yang dihasilkan oleh trigger database.
@@ -11,8 +11,8 @@ Proyek ini merupakan sistem manajemen hotel yang dibangun menggunakan teknologi 
 
 ## Struktur Proyek
 - HotelManagement.sln: File solusi untuk membuka proyek di Visual Studio.
-- HotelManagement/: Folder utama yang berisi kode sumber aplikasi.
-- packages/: Folder berisi dependensi yang dibutuhkan untuk menjalankan proyek.
+- HotelManagement: Folder utama yang berisi kode sumber aplikasi.
+- packages: Folder berisi dependensi yang dibutuhkan untuk menjalankan proyek.
 - README.md: Dokumentasi proyek (file ini).
 
 ## Teknologi yang Digunakan
