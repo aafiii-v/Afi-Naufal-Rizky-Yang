@@ -1,12 +1,5 @@
 ﻿using HotelManagement.Controller;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HotelManagement.View
@@ -14,10 +7,12 @@ namespace HotelManagement.View
     public partial class Dashboard : UserControl
     {
         LoginController AdminConroller;
+        RoomsController RoomsController;
         public Dashboard()
         {
-            AdminConroller = new LoginController();
             InitializeComponent();
+            AdminConroller = new LoginController();
+            RoomsController = new RoomsController();
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
@@ -25,11 +20,11 @@ namespace HotelManagement.View
             try
             {
                 LabelAngkaTotalAdmin.Text = AdminConroller.HitungTotalAdmin().ToString();
-                //LabelAngkaAvailebleRooms.Text = 
+                LabelAngkaAvailebleRooms.Text = RoomsController.HitungTotalRoomsAvailable().ToString();
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

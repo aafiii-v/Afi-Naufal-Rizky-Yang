@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TextBoxUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.LabelUsername = new System.Windows.Forms.Label();
             this.TextBoxPassword = new Guna.UI2.WinForms.Guna2TextBox();
@@ -37,7 +37,6 @@
             this.BtnDeleteAdmin = new Guna.UI2.WinForms.Guna2Button();
             this.BtnClearAdmin = new Guna.UI2.WinForms.Guna2Button();
             this.GroupBoxDataAdmin = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.LabelCloseDataAdmin = new System.Windows.Forms.Label();
             this.GridviewDataAdmin = new System.Windows.Forms.DataGridView();
             this.GroupBoxDataAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridviewDataAdmin)).BeginInit();
@@ -165,7 +164,6 @@
             // 
             this.GroupBoxDataAdmin.BackColor = System.Drawing.Color.White;
             this.GroupBoxDataAdmin.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.GroupBoxDataAdmin.Controls.Add(this.LabelCloseDataAdmin);
             this.GroupBoxDataAdmin.Controls.Add(this.GridviewDataAdmin);
             this.GroupBoxDataAdmin.Controls.Add(this.BtnClearAdmin);
             this.GroupBoxDataAdmin.Controls.Add(this.BtnDeleteAdmin);
@@ -183,45 +181,28 @@
             this.GroupBoxDataAdmin.TabIndex = 1;
             this.GroupBoxDataAdmin.Text = "Data Admin";
             // 
-            // LabelCloseDataAdmin
-            // 
-            this.LabelCloseDataAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelCloseDataAdmin.AutoSize = true;
-            this.LabelCloseDataAdmin.BackColor = System.Drawing.Color.Silver;
-            this.LabelCloseDataAdmin.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LabelCloseDataAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LabelCloseDataAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.LabelCloseDataAdmin.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelCloseDataAdmin.ForeColor = System.Drawing.Color.Red;
-            this.LabelCloseDataAdmin.Location = new System.Drawing.Point(1164, 2);
-            this.LabelCloseDataAdmin.Name = "LabelCloseDataAdmin";
-            this.LabelCloseDataAdmin.Size = new System.Drawing.Size(32, 35);
-            this.LabelCloseDataAdmin.TabIndex = 40;
-            this.LabelCloseDataAdmin.Text = "X";
-            this.LabelCloseDataAdmin.Click += new System.EventHandler(this.LabelCloseDataAdmin_Click);
-            // 
             // GridviewDataAdmin
             // 
             this.GridviewDataAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridviewDataAdmin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridviewDataAdmin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.GridviewDataAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridviewDataAdmin.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridviewDataAdmin.DefaultCellStyle = dataGridViewCellStyle4;
             this.GridviewDataAdmin.GridColor = System.Drawing.Color.Silver;
             this.GridviewDataAdmin.Location = new System.Drawing.Point(505, 70);
             this.GridviewDataAdmin.Name = "GridviewDataAdmin";
@@ -255,7 +236,6 @@
         private Guna.UI2.WinForms.Guna2Button BtnDeleteAdmin;
         private Guna.UI2.WinForms.Guna2Button BtnClearAdmin;
         private Guna.UI2.WinForms.Guna2GroupBox GroupBoxDataAdmin;
-        private System.Windows.Forms.Label LabelCloseDataAdmin;
         protected System.Windows.Forms.DataGridView GridviewDataAdmin;
     }
 }

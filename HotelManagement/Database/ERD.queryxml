@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<querybuilder version="8.3">
+<source>
+<database charset="latin1" collation="latin1_swedish_ci">hotel_system</database>
+</source>
+<canvas>
+<table tablename="admin" alias="" left="97" top="25" width="150" height="113" />
+<table tablename="kamar" alias="" left="620" top="71" width="150" height="113" />
+<table tablename="pemesanan" alias="" left="237" top="265" width="150" height="113" />
+<table tablename="tamu" alias="" left="900" top="276" width="150" height="113" />
+<join type = "Inner Join">
+<from tablename = "pemesanan" alias = "">kode_kamar</from>
+<to tablename = "kamar" alias = "">kode_kamar</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "tamu" alias = "">kode_kamar</from>
+<to tablename = "kamar" alias = "">kode_kamar</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "tamu" alias = "">kode_pemesanan</from>
+<to tablename = "pemesanan" alias = "">kode_pemesanan</to>
+</join>
+</canvas>
+<grid>
+<column id="1">
+<table tablename="tamu"></table>
+<field>nama_tamu</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="2">
+<table tablename="admin"></table>
+<field>username</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="3">
+<table tablename="kamar"></table>
+<field>status_kamar</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+</grid>
+</querybuilder>

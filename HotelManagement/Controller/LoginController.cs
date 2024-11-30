@@ -1,5 +1,4 @@
 ﻿using HotelManagement.Model;
-using HotelManagement.View;
 using MySqlConnector;
 using System;
 using System.Data;

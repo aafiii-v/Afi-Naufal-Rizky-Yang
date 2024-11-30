@@ -34,17 +34,20 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.LabelCloseApplication = new System.Windows.Forms.Label();
             this.PanelNavigasi = new Guna.UI2.WinForms.Guna2Panel();
+            this.BtnRooms = new Guna.UI2.WinForms.Guna2Button();
             this.BtnLogoutBeranda = new Guna.UI2.WinForms.Guna2Button();
             this.BtnDashboard = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.BtnRooms = new Guna.UI2.WinForms.Guna2Button();
+            this.BtnCustomers = new Guna.UI2.WinForms.Guna2Button();
+            this.BtnPemesanan = new Guna.UI2.WinForms.Guna2Button();
             this.BtnAdminControl = new Guna.UI2.WinForms.Guna2Button();
             this.CirclePictureBoxHotel = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.LabelHotelName = new System.Windows.Forms.Label();
             this.PanelNavigasion = new System.Windows.Forms.Panel();
-            this.AdminRooms = new HotelManagement.AdminRooms();
-            this.Dashboard = new HotelManagement.View.Dashboard();
+            this.Customers = new HotelManagement.View.Customers();
             this.AdminControl = new HotelManagement.View.AdminControl();
+            this.AdminRooms = new HotelManagement.AdminRooms();
+            this.Pemesanan = new HotelManagement.View.TxtBoxKodePemesanan();
+            this.Dashboard = new HotelManagement.View.Dashboard();
             this.panel3.SuspendLayout();
             this.PanelNavigasi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CirclePictureBoxHotel)).BeginInit();
@@ -86,11 +89,11 @@
             this.LabelCloseApplication.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.LabelCloseApplication.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LabelCloseApplication.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.LabelCloseApplication.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelCloseApplication.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelCloseApplication.ForeColor = System.Drawing.Color.Red;
-            this.LabelCloseApplication.Location = new System.Drawing.Point(-1, 0);
+            this.LabelCloseApplication.Location = new System.Drawing.Point(-2, 0);
             this.LabelCloseApplication.Name = "LabelCloseApplication";
-            this.LabelCloseApplication.Size = new System.Drawing.Size(32, 35);
+            this.LabelCloseApplication.Size = new System.Drawing.Size(35, 36);
             this.LabelCloseApplication.TabIndex = 30;
             this.LabelCloseApplication.Text = "X";
             this.LabelCloseApplication.Click += new System.EventHandler(this.LabelCloseApplication_Click);
@@ -99,10 +102,11 @@
             // 
             this.PanelNavigasi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.PanelNavigasi.BorderRadius = 1;
+            this.PanelNavigasi.Controls.Add(this.BtnRooms);
             this.PanelNavigasi.Controls.Add(this.BtnLogoutBeranda);
             this.PanelNavigasi.Controls.Add(this.BtnDashboard);
-            this.PanelNavigasi.Controls.Add(this.guna2Button1);
-            this.PanelNavigasi.Controls.Add(this.BtnRooms);
+            this.PanelNavigasi.Controls.Add(this.BtnCustomers);
+            this.PanelNavigasi.Controls.Add(this.BtnPemesanan);
             this.PanelNavigasi.Controls.Add(this.BtnAdminControl);
             this.PanelNavigasi.Controls.Add(this.CirclePictureBoxHotel);
             this.PanelNavigasi.Controls.Add(this.LabelHotelName);
@@ -111,6 +115,27 @@
             this.PanelNavigasi.Name = "PanelNavigasi";
             this.PanelNavigasi.Size = new System.Drawing.Size(450, 830);
             this.PanelNavigasi.TabIndex = 31;
+            // 
+            // BtnRooms
+            // 
+            this.BtnRooms.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnRooms.BorderColor = System.Drawing.Color.White;
+            this.BtnRooms.BorderRadius = 2;
+            this.BtnRooms.BorderThickness = 2;
+            this.BtnRooms.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnRooms.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BtnRooms.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BtnRooms.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BtnRooms.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BtnRooms.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtnRooms.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRooms.ForeColor = System.Drawing.Color.White;
+            this.BtnRooms.Location = new System.Drawing.Point(78, 514);
+            this.BtnRooms.Name = "BtnRooms";
+            this.BtnRooms.Size = new System.Drawing.Size(300, 60);
+            this.BtnRooms.TabIndex = 38;
+            this.BtnRooms.Text = "ROOMS";
+            this.BtnRooms.Click += new System.EventHandler(this.BtnRooms_Click_1);
             // 
             // BtnLogoutBeranda
             // 
@@ -127,7 +152,7 @@
             this.BtnLogoutBeranda.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BtnLogoutBeranda.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnLogoutBeranda.ForeColor = System.Drawing.Color.White;
-            this.BtnLogoutBeranda.Location = new System.Drawing.Point(22, 767);
+            this.BtnLogoutBeranda.Location = new System.Drawing.Point(22, 750);
             this.BtnLogoutBeranda.Name = "BtnLogoutBeranda";
             this.BtnLogoutBeranda.Size = new System.Drawing.Size(408, 47);
             this.BtnLogoutBeranda.TabIndex = 37;
@@ -148,53 +173,54 @@
             this.BtnDashboard.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BtnDashboard.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnDashboard.ForeColor = System.Drawing.Color.White;
-            this.BtnDashboard.Location = new System.Drawing.Point(78, 277);
+            this.BtnDashboard.Location = new System.Drawing.Point(78, 294);
             this.BtnDashboard.Name = "BtnDashboard";
-            this.BtnDashboard.Size = new System.Drawing.Size(300, 80);
+            this.BtnDashboard.Size = new System.Drawing.Size(300, 60);
             this.BtnDashboard.TabIndex = 36;
             this.BtnDashboard.Text = "Dashboard";
             this.BtnDashboard.Click += new System.EventHandler(this.BtnDashboard_Click);
             // 
-            // guna2Button1
+            // BtnCustomers
             // 
-            this.guna2Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.guna2Button1.BorderColor = System.Drawing.Color.White;
-            this.guna2Button1.BorderRadius = 2;
-            this.guna2Button1.BorderThickness = 2;
-            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(78, 656);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(300, 80);
-            this.guna2Button1.TabIndex = 35;
-            this.guna2Button1.Text = "CUSTOMERS";
+            this.BtnCustomers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnCustomers.BorderColor = System.Drawing.Color.White;
+            this.BtnCustomers.BorderRadius = 2;
+            this.BtnCustomers.BorderThickness = 2;
+            this.BtnCustomers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCustomers.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BtnCustomers.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BtnCustomers.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BtnCustomers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BtnCustomers.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtnCustomers.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCustomers.ForeColor = System.Drawing.Color.White;
+            this.BtnCustomers.Location = new System.Drawing.Point(78, 734);
+            this.BtnCustomers.Name = "BtnCustomers";
+            this.BtnCustomers.Size = new System.Drawing.Size(300, 60);
+            this.BtnCustomers.TabIndex = 35;
+            this.BtnCustomers.Text = "CUSTOMERS";
+            this.BtnCustomers.Click += new System.EventHandler(this.BtnCustomers_Click);
             // 
-            // BtnRooms
+            // BtnPemesanan
             // 
-            this.BtnRooms.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BtnRooms.BorderColor = System.Drawing.Color.White;
-            this.BtnRooms.BorderRadius = 2;
-            this.BtnRooms.BorderThickness = 2;
-            this.BtnRooms.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnRooms.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BtnRooms.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BtnRooms.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BtnRooms.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BtnRooms.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.BtnRooms.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRooms.ForeColor = System.Drawing.Color.White;
-            this.BtnRooms.Location = new System.Drawing.Point(78, 531);
-            this.BtnRooms.Name = "BtnRooms";
-            this.BtnRooms.Size = new System.Drawing.Size(300, 80);
-            this.BtnRooms.TabIndex = 34;
-            this.BtnRooms.Text = "ROOMS";
-            this.BtnRooms.Click += new System.EventHandler(this.BtnRooms_Click);
+            this.BtnPemesanan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnPemesanan.BorderColor = System.Drawing.Color.White;
+            this.BtnPemesanan.BorderRadius = 2;
+            this.BtnPemesanan.BorderThickness = 2;
+            this.BtnPemesanan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnPemesanan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BtnPemesanan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BtnPemesanan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BtnPemesanan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BtnPemesanan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtnPemesanan.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPemesanan.ForeColor = System.Drawing.Color.White;
+            this.BtnPemesanan.Location = new System.Drawing.Point(78, 404);
+            this.BtnPemesanan.Name = "BtnPemesanan";
+            this.BtnPemesanan.Size = new System.Drawing.Size(300, 60);
+            this.BtnPemesanan.TabIndex = 34;
+            this.BtnPemesanan.Text = "BOOKING";
+            this.BtnPemesanan.Click += new System.EventHandler(this.BtnPemesanan_Click);
             // 
             // BtnAdminControl
             // 
@@ -210,9 +236,9 @@
             this.BtnAdminControl.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BtnAdminControl.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAdminControl.ForeColor = System.Drawing.Color.White;
-            this.BtnAdminControl.Location = new System.Drawing.Point(78, 404);
+            this.BtnAdminControl.Location = new System.Drawing.Point(78, 624);
             this.BtnAdminControl.Name = "BtnAdminControl";
-            this.BtnAdminControl.Size = new System.Drawing.Size(300, 80);
+            this.BtnAdminControl.Size = new System.Drawing.Size(300, 60);
             this.BtnAdminControl.TabIndex = 33;
             this.BtnAdminControl.Text = "ADMIN";
             this.BtnAdminControl.Click += new System.EventHandler(this.BtnAdminControl_Click);
@@ -253,6 +279,27 @@
             this.PanelNavigasion.Size = new System.Drawing.Size(1724, 30);
             this.PanelNavigasion.TabIndex = 2;
             // 
+            // Customers
+            // 
+            this.Customers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Customers.Location = new System.Drawing.Point(479, 30);
+            this.Customers.Name = "Customers";
+            this.Customers.Size = new System.Drawing.Size(1275, 830);
+            this.Customers.TabIndex = 36;
+            // 
+            // AdminControl
+            // 
+            this.AdminControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.AdminControl.BackColor = System.Drawing.Color.Gray;
+            this.AdminControl.Location = new System.Drawing.Point(479, 30);
+            this.AdminControl.Name = "AdminControl";
+            this.AdminControl.Size = new System.Drawing.Size(1275, 830);
+            this.AdminControl.TabIndex = 35;
+            // 
             // AdminRooms
             // 
             this.AdminRooms.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -263,6 +310,16 @@
             this.AdminRooms.Size = new System.Drawing.Size(1275, 830);
             this.AdminRooms.TabIndex = 34;
             // 
+            // Pemesanan
+            // 
+            this.Pemesanan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Pemesanan.Location = new System.Drawing.Point(479, 30);
+            this.Pemesanan.Name = "Pemesanan";
+            this.Pemesanan.Size = new System.Drawing.Size(1275, 830);
+            this.Pemesanan.TabIndex = 33;
+            // 
             // Dashboard
             // 
             this.Dashboard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -271,18 +328,7 @@
             this.Dashboard.Location = new System.Drawing.Point(479, 30);
             this.Dashboard.Name = "Dashboard";
             this.Dashboard.Size = new System.Drawing.Size(1275, 830);
-            this.Dashboard.TabIndex = 33;
-            // 
-            // AdminControl
-            // 
-            this.AdminControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.AdminControl.BackColor = System.Drawing.Color.Gray;
-            this.AdminControl.Location = new System.Drawing.Point(480, 30);
-            this.AdminControl.Name = "AdminControl";
-            this.AdminControl.Size = new System.Drawing.Size(1274, 830);
-            this.AdminControl.TabIndex = 32;
+            this.Dashboard.TabIndex = 32;
             // 
             // FormBeranda
             // 
@@ -290,9 +336,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1784, 890);
-            this.Controls.Add(this.AdminRooms);
-            this.Controls.Add(this.Dashboard);
+            this.Controls.Add(this.Customers);
             this.Controls.Add(this.AdminControl);
+            this.Controls.Add(this.AdminRooms);
+            this.Controls.Add(this.Pemesanan);
+            this.Controls.Add(this.Dashboard);
             this.Controls.Add(this.PanelNavigasi);
             this.Controls.Add(this.PanelNavigasion);
             this.Controls.Add(this.panel3);
@@ -324,14 +372,17 @@
         private System.Windows.Forms.Label LabelHotelName;
         private Guna.UI2.WinForms.Guna2CirclePictureBox CirclePictureBoxHotel;
         private System.Windows.Forms.Label LabelCloseApplication;
-        private System.Windows.Forms.Panel PanelNavigasion;
         private Guna.UI2.WinForms.Guna2Button BtnAdminControl;
         private Guna.UI2.WinForms.Guna2Button BtnLogoutBeranda;
         private Guna.UI2.WinForms.Guna2Button BtnDashboard;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button BtnRooms;
-        private AdminControl AdminControl;
+        private Guna.UI2.WinForms.Guna2Button BtnCustomers;
+        private Guna.UI2.WinForms.Guna2Button BtnPemesanan;
         private Dashboard Dashboard;
+        private System.Windows.Forms.Panel PanelNavigasion;
+        private Guna.UI2.WinForms.Guna2Button BtnRooms;
+        private TxtBoxKodePemesanan Pemesanan;
         private AdminRooms AdminRooms;
+        private AdminControl AdminControl;
+        private Customers Customers;
     }
 }

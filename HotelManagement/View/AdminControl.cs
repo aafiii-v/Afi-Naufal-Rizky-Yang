@@ -1,13 +1,6 @@
 ﻿using HotelManagement.Controller;
 using MySqlConnector;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HotelManagement.View
@@ -64,11 +57,6 @@ namespace HotelManagement.View
         {
             TextBoxUsername.Text = GridviewDataAdmin.CurrentRow.Cells[0].Value.ToString();
             TextBoxPassword.Text = GridviewDataAdmin.CurrentRow.Cells[1].Value.ToString();
-        }
-
-        private void LabelCloseDataAdmin_Click(object sender, EventArgs e)
-        {
-            this.Hide();
         }
     }
 }

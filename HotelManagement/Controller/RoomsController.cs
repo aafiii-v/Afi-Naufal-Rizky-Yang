@@ -1,35 +1,12 @@
 ﻿using MySqlConnector;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace HotelManagement.Controller
 {
     internal class RoomsController : Model.Connection
     {
-        public DataTable GetList(MySqlCommand command)
-        {
-            DataTable table = new DataTable();
-            using (MySqlConnection conn = GetConn())
-            {
-                try
-                {
-                    command.Connection = conn;
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
-                    adapter.Fill(table);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            return table;
-        }
         public  DataTable ShowRooms(MySqlCommand command)
         {
             DataTable rooms = new DataTable();
@@ -47,6 +24,40 @@ namespace HotelManagement.Controller
                 }
             }
             return rooms;
+        }
+
+        public void TambahRoom(int noKamar, string tipeKamar, string statusKamar)
+        {
+            try
+            {
+                string query = "INSERT INTO kamar VALUES (@no_kamar, @tipe_kamar, @status_kamar)";
+                MySqlCommand cmd = new MySqlCommand(query, GetConn());
+                cmd.Parameters.Add("@no_kamar", MySqlDbType.Int64).Value = noKamar;
+                cmd.Parameters.Add("@tipe_kamar", MySqlDbType.VarChar).Value = tipeKamar;
+                cmd.Parameters.Add("@status_kamar", MySqlDbType.Enum).Value = statusKamar;
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal menambah kamar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void UpdateRoom(int noKamar, string tipeKamar, string statusKamar)
+        {
+            try
+            {
+                string query = "UPDATE kamar SET tipe_kamar = @tipe_kamar, status_kamar = @status_kamar WHERE no_kamar = @no_kamar";
+                MySqlCommand cmd = new MySqlCommand(query, GetConn());
+                cmd.Parameters.Add("@no_kamar", MySqlDbType.Int32).Value = noKamar;
+                cmd.Parameters.Add("@tipe_kamar", MySqlDbType.VarChar).Value = tipeKamar;
+                cmd.Parameters.Add("@status_kamar", MySqlDbType.Enum).Value = statusKamar;
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal mengupdate kamar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public void DeleteRoom(string no_kamar)
@@ -76,6 +87,39 @@ namespace HotelManagement.Controller
                 {
                     MessageBox.Show("Failed to delete Room: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        public int HitungTotalRoomsAvailable()
+        {
+            string query = "SELECT COUNT(*) FROM kamar WHERE status_kamar = 'Tersedia'";
+            try
+            {
+                using (var conn = GetConn())
+                {
+                    if (conn.State != ConnectionState.Open)
+                    {
+                        conn.Open();
+                    }
+                    using (var command = new MySqlCommand(query, conn))
+                    {
+                        var result = command.ExecuteScalar();
+                        if (result != null && result != DBNull.Value)
+                        {
+                            return Convert.ToInt32(result);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Data kamar tidak ditemukan!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return 0;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error menghitung jumlah kamar tersedia: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
             }
         }
     }

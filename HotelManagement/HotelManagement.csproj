@@ -84,6 +84,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\CustomerController.cs" />
+    <Compile Include="Controller\PemesananController.cs" />
     <Compile Include="Controller\RoomsController.cs" />
     <Compile Include="View\AdminRooms.cs">
       <SubType>UserControl</SubType>
@@ -98,6 +100,12 @@
     </Compile>
     <Compile Include="View\AdminControl.Designer.cs">
       <DependentUpon>AdminControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Customers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Customers.Designer.cs">
+      <DependentUpon>Customers.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Dashboard.cs">
       <SubType>UserControl</SubType>
@@ -125,6 +133,12 @@
     <Compile Include="View\FormRegister.Designer.cs">
       <DependentUpon>FormRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Pemesanan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Pemesanan.Designer.cs">
+      <DependentUpon>Pemesanan.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -141,6 +155,9 @@
     <EmbeddedResource Include="View\AdminRooms.resx">
       <DependentUpon>AdminRooms.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Customers.resx">
+      <DependentUpon>Customers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,6 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormRegister.resx">
       <DependentUpon>FormRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Pemesanan.resx">
+      <DependentUpon>Pemesanan.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -168,7 +188,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
     <None Include="Resources\Resepsionis.jpeg" />
     <None Include="Resources\bed.png" />
     <None Include="Resources\group.png" />

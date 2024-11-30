@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="latin1" collation="latin1_swedish_ci">hotel_system</database>
+</source>
+<canvas zoom="110">
+<tables>
+<table name="admin" view="colnames">
+<left>105</left>
+<top>28</top>
+<width>189</width>
+<height>199</height>
+<sql_create_table>CREATE TABLE `admin` (
+  `username` varchar(50) DEFAULT NULL,
+  `passwordd` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci</sql_create_table>
+</table>
+<table name="kamar" view="colnames">
+<left>452</left>
+<top>85</top>
+<width>181</width>
+<height>206</height>
+<sql_create_table>CREATE TABLE `kamar` (
+  `no_kamar` char(5) NOT NULL,
+  `tipe_kamar` varchar(100) NOT NULL,
+  `status_kamar` enum('tersedia','dipesan') NOT NULL,
+  PRIMARY KEY (`no_kamar`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci</sql_create_table>
+</table>
+<table name="pemesanan" view="colnames">
+<left>124</left>
+<top>334</top>
+<width>233</width>
+<height>220</height>
+<sql_create_table>CREATE TABLE `pemesanan` (
+  `kode_pemesanan` char(10) NOT NULL,
+  `no_kamar` char(5) DEFAULT NULL,
+  `waktu_masuk` datetime NOT NULL,
+  `waktu_keluar` datetime NOT NULL,
+  PRIMARY KEY (`kode_pemesanan`),
+  KEY `fk_kamar` (`no_kamar`),
+  CONSTRAINT `fk_kamar` FOREIGN KEY (`no_kamar`) REFERENCES `kamar` (`no_kamar`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci</sql_create_table>
+</table>
+<table name="tamu" view="colnames">
+<left>686</left>
+<top>321</top>
+<width>202</width>
+<height>225</height>
+<sql_create_table>CREATE TABLE `tamu` (
+  `kode_tamu` char(10) NOT NULL,
+  `no_kamar` char(5) DEFAULT NULL,
+  `nama_tamu` varchar(100) NOT NULL,
+  `no_hp` varchar(15) NOT NULL,
+  `kode_pemesanan` char(10) DEFAULT NULL,
+  PRIMARY KEY (`kode_tamu`),
+  KEY `fk_tamu_kamar` (`no_kamar`),
+  KEY `fk_tamu_pemesanan` (`kode_pemesanan`),
+  CONSTRAINT `fk_tamu_kamar` FOREIGN KEY (`no_kamar`) REFERENCES `kamar` (`no_kamar`),
+  CONSTRAINT `fk_tamu_pemesanan` FOREIGN KEY (`kode_pemesanan`) REFERENCES `pemesanan` (`kode_pemesanan`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>

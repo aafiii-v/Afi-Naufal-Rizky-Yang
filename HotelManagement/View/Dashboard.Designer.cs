@@ -33,17 +33,17 @@
             this.PanelAvailebleRooms = new Guna.UI2.WinForms.Guna2Panel();
             this.LabelAngkaAvailebleRooms = new System.Windows.Forms.Label();
             this.LabelAvailebleRooms = new System.Windows.Forms.Label();
-            this.PicBoxAvailebleRooms = new Guna.UI2.WinForms.Guna2PictureBox();
             this.PanelTotalAdmin = new Guna.UI2.WinForms.Guna2Panel();
             this.LabelAngkaTotalAdmin = new System.Windows.Forms.Label();
             this.LabelTotalAdmin = new System.Windows.Forms.Label();
+            this.PicBoxAvailebleRooms = new Guna.UI2.WinForms.Guna2PictureBox();
             this.PicBoxTotalAdmin = new Guna.UI2.WinForms.Guna2PictureBox();
             this.PicBoxBgDashboard = new Guna.UI2.WinForms.Guna2PictureBox();
             this.GroupBoxDashboard.SuspendLayout();
             this.PanelInfoDashboard.SuspendLayout();
             this.PanelAvailebleRooms.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PicBoxAvailebleRooms)).BeginInit();
             this.PanelTotalAdmin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBoxAvailebleRooms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxTotalAdmin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxBgDashboard)).BeginInit();
             this.SuspendLayout();
@@ -119,18 +119,6 @@
             this.LabelAvailebleRooms.TabIndex = 17;
             this.LabelAvailebleRooms.Text = "Rooms available";
             // 
-            // PicBoxAvailebleRooms
-            // 
-            this.PicBoxAvailebleRooms.BorderRadius = 15;
-            this.PicBoxAvailebleRooms.Image = global::HotelManagement.Properties.Resources.bed;
-            this.PicBoxAvailebleRooms.ImageRotate = 0F;
-            this.PicBoxAvailebleRooms.Location = new System.Drawing.Point(19, 25);
-            this.PicBoxAvailebleRooms.Name = "PicBoxAvailebleRooms";
-            this.PicBoxAvailebleRooms.Size = new System.Drawing.Size(60, 60);
-            this.PicBoxAvailebleRooms.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PicBoxAvailebleRooms.TabIndex = 1;
-            this.PicBoxAvailebleRooms.TabStop = false;
-            // 
             // PanelTotalAdmin
             // 
             this.PanelTotalAdmin.BackColor = System.Drawing.Color.Teal;
@@ -169,6 +157,18 @@
             this.LabelTotalAdmin.TabIndex = 16;
             this.LabelTotalAdmin.Text = "Total Admin";
             // 
+            // PicBoxAvailebleRooms
+            // 
+            this.PicBoxAvailebleRooms.BorderRadius = 15;
+            this.PicBoxAvailebleRooms.Image = global::HotelManagement.Properties.Resources.bed;
+            this.PicBoxAvailebleRooms.ImageRotate = 0F;
+            this.PicBoxAvailebleRooms.Location = new System.Drawing.Point(19, 25);
+            this.PicBoxAvailebleRooms.Name = "PicBoxAvailebleRooms";
+            this.PicBoxAvailebleRooms.Size = new System.Drawing.Size(60, 60);
+            this.PicBoxAvailebleRooms.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PicBoxAvailebleRooms.TabIndex = 1;
+            this.PicBoxAvailebleRooms.TabStop = false;
+            // 
             // PicBoxTotalAdmin
             // 
             this.PicBoxTotalAdmin.BorderRadius = 15;
@@ -205,9 +205,9 @@
             this.PanelInfoDashboard.ResumeLayout(false);
             this.PanelAvailebleRooms.ResumeLayout(false);
             this.PanelAvailebleRooms.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PicBoxAvailebleRooms)).EndInit();
             this.PanelTotalAdmin.ResumeLayout(false);
             this.PanelTotalAdmin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBoxAvailebleRooms)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxTotalAdmin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxBgDashboard)).EndInit();
             this.ResumeLayout(false);

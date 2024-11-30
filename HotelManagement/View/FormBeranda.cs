@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Security;
 using System.Windows.Forms;
 
 namespace HotelManagement.View
@@ -16,12 +8,19 @@ namespace HotelManagement.View
         public FormBeranda()
         {
             InitializeComponent();
+            Pemesanan.DataPemesananChanged += Customers.ShowTable;
+            Pemesanan.DataPemesananChanged += AdminRooms.ShowTable;
         }
         private void Hideit()
         {
-            Dashboard.Hide();
             AdminControl.Hide();
             AdminRooms.Hide();
+            Customers.Hide();
+            Pemesanan.Hide();
+        }
+        private void FormBeranda_Load(object sender, EventArgs e)
+        {
+            Hideit();
         }
         private void LabelCloseApplication_Click(object sender, EventArgs e)
         {
@@ -46,19 +45,25 @@ namespace HotelManagement.View
             Hideit();
             AdminControl.Show();
         }
-        private void FormBeranda_Load(object sender, EventArgs e)
-        {
-            Hideit();
-        }
         private void BtnDashboard_Click(object sender, EventArgs e)
         {
             Hideit();
             Dashboard.Show();
         }
-        private void BtnRooms_Click(object sender, EventArgs e)
+        private void BtnRooms_Click_1(object sender, EventArgs e)
         {
             Hideit();
             AdminRooms.Show();
+        }
+        private void BtnPemesanan_Click(object sender, EventArgs e)
+        {
+            Hideit();
+            Pemesanan.Show();
+        }
+        private void BtnCustomers_Click(object sender, EventArgs e)
+        {
+            Hideit();
+            Customers.Show();
         }
     }
 }
