@@ -54,6 +54,5 @@ begitu juga dengan field `status_kamar`
 ## Pengembang
 - Nama: Afi Naufal Rizky Yang
 - Email: [afinaufalrizkyyang24@gmail.com]
-- Kontak: [085338166188]
 
 
