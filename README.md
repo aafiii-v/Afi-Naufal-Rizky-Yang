@@ -27,7 +27,7 @@ Proyek ini merupakan sistem manajemen hotel yang dibangun menggunakan teknologi 
 3. Jalankan aplikasi dengan menekan tombol **Start** di Visual Studio.
 
 ## Diagram
-![ERD](HotelManagement/Resources/Screenshot 2024-11-30 172724.png)
+![ERD](https://github.com/aafiii-v/Afi-Naufal-Rizky-Yang/blob/master/HotelManagement/Resources/Screenshot%202024-11-30%20172724.png))
 
 ## Database
 ### Struktur Tabel
