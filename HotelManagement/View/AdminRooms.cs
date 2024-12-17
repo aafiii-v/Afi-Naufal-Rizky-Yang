@@ -37,32 +37,7 @@ namespace HotelManagement
             TextBoxTypeRoom.Text = "";
             ComboBoxStatusRoom.SelectedIndex = -1;
         }
-
-        private void BtnUpdateRoom_Click(object sender, EventArgs e)
-        {
-            if (TextBoxNoRoom.Text == "" || TextBoxTypeRoom.Text == "" || ComboBoxStatusRoom.SelectedIndex == -1)
-            {
-                MessageBox.Show("Please select data on Cell Data you want to update!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                try
-                {
-                    int noKamar = int.Parse(TextBoxNoRoom.Text);
-                    string tipeKamar = TextBoxTypeRoom.Text;
-                    string statusKamar = ComboBoxStatusRoom.Text;
-
-                    roomsController.UpdateRoom(noKamar, tipeKamar, statusKamar);
-                    ShowTable();
-                    BtnClearRoom_Click(sender, e);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Gagal memperbarui kamar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
+        
         private void BtnAddRoom_Click(object sender, EventArgs e)
         {
             if (TextBoxTypeRoom.Text == "" || ComboBoxStatusRoom.SelectedIndex == -1)

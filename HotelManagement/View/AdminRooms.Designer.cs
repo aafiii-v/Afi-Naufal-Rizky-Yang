@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GroupBoxDataRooms = new Guna.UI2.WinForms.Guna2GroupBox();
             this.GridviewDataRooms = new System.Windows.Forms.DataGridView();
             this.PanelSelectRoom = new Guna.UI2.WinForms.Guna2Panel();
             this.BtnClearRoom = new Guna.UI2.WinForms.Guna2Button();
             this.TextBoxTypeRoom = new Guna.UI2.WinForms.Guna2TextBox();
-            this.BtnUpdateRoom = new Guna.UI2.WinForms.Guna2Button();
             this.TextBoxNoRoom = new Guna.UI2.WinForms.Guna2TextBox();
             this.BtnAddRoom = new Guna.UI2.WinForms.Guna2Button();
             this.ComboBoxStatusRoom = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -66,23 +65,23 @@
             this.GridviewDataRooms.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridviewDataRooms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.GridviewDataRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridviewDataRooms.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridviewDataRooms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.GridviewDataRooms.ColumnHeadersHeight = 29;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridviewDataRooms.DefaultCellStyle = dataGridViewCellStyle4;
             this.GridviewDataRooms.GridColor = System.Drawing.Color.Silver;
             this.GridviewDataRooms.Location = new System.Drawing.Point(97, 63);
             this.GridviewDataRooms.Name = "GridviewDataRooms";
@@ -98,7 +97,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PanelSelectRoom.Controls.Add(this.BtnClearRoom);
             this.PanelSelectRoom.Controls.Add(this.TextBoxTypeRoom);
-            this.PanelSelectRoom.Controls.Add(this.BtnUpdateRoom);
             this.PanelSelectRoom.Controls.Add(this.TextBoxNoRoom);
             this.PanelSelectRoom.Controls.Add(this.BtnAddRoom);
             this.PanelSelectRoom.Controls.Add(this.ComboBoxStatusRoom);
@@ -124,7 +122,7 @@
             this.BtnClearRoom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BtnClearRoom.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnClearRoom.ForeColor = System.Drawing.Color.White;
-            this.BtnClearRoom.Location = new System.Drawing.Point(723, 205);
+            this.BtnClearRoom.Location = new System.Drawing.Point(627, 205);
             this.BtnClearRoom.Name = "BtnClearRoom";
             this.BtnClearRoom.Size = new System.Drawing.Size(182, 60);
             this.BtnClearRoom.TabIndex = 49;
@@ -154,27 +152,6 @@
             this.TextBoxTypeRoom.SelectedText = "";
             this.TextBoxTypeRoom.Size = new System.Drawing.Size(307, 37);
             this.TextBoxTypeRoom.TabIndex = 23;
-            // 
-            // BtnUpdateRoom
-            // 
-            this.BtnUpdateRoom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BtnUpdateRoom.BorderColor = System.Drawing.Color.Transparent;
-            this.BtnUpdateRoom.BorderRadius = 25;
-            this.BtnUpdateRoom.BorderThickness = 2;
-            this.BtnUpdateRoom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnUpdateRoom.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BtnUpdateRoom.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BtnUpdateRoom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BtnUpdateRoom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BtnUpdateRoom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.BtnUpdateRoom.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnUpdateRoom.ForeColor = System.Drawing.Color.White;
-            this.BtnUpdateRoom.Location = new System.Drawing.Point(447, 205);
-            this.BtnUpdateRoom.Name = "BtnUpdateRoom";
-            this.BtnUpdateRoom.Size = new System.Drawing.Size(182, 60);
-            this.BtnUpdateRoom.TabIndex = 48;
-            this.BtnUpdateRoom.Text = "UPDATE";
-            this.BtnUpdateRoom.Click += new System.EventHandler(this.BtnUpdateRoom_Click);
             // 
             // TextBoxNoRoom
             // 
@@ -236,8 +213,7 @@
             this.ComboBoxStatusRoom.ItemHeight = 30;
             this.ComboBoxStatusRoom.Items.AddRange(new object[] {
             "tersedia",
-            "dipesan",
-            "rusak"});
+            "dipesan"});
             this.ComboBoxStatusRoom.Location = new System.Drawing.Point(734, 24);
             this.ComboBoxStatusRoom.Name = "ComboBoxStatusRoom";
             this.ComboBoxStatusRoom.Size = new System.Drawing.Size(237, 36);
@@ -300,7 +276,6 @@
         private Guna.UI2.WinForms.Guna2TextBox TextBoxTypeRoom;
         private Guna.UI2.WinForms.Guna2TextBox TextBoxNoRoom;
         protected System.Windows.Forms.DataGridView GridviewDataRooms;
-        private Guna.UI2.WinForms.Guna2Button BtnUpdateRoom;
         private Guna.UI2.WinForms.Guna2Button BtnAddRoom;
         private Guna.UI2.WinForms.Guna2Button BtnClearRoom;
     }

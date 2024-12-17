@@ -72,7 +72,7 @@
             this.GroupBoxPemesanan.ForeColor = System.Drawing.Color.White;
             this.GroupBoxPemesanan.Location = new System.Drawing.Point(0, 0);
             this.GroupBoxPemesanan.Name = "GroupBoxPemesanan";
-            this.GroupBoxPemesanan.Size = new System.Drawing.Size(1275, 830);
+            this.GroupBoxPemesanan.Size = new System.Drawing.Size(1275, 817);
             this.GroupBoxPemesanan.TabIndex = 2;
             this.GroupBoxPemesanan.Text = "Pemesanan";
             // 
@@ -103,7 +103,7 @@
             this.PanelSelectPemesanan.Controls.Add(this.LabelWaktuKeluar);
             this.PanelSelectPemesanan.Controls.Add(this.LabelWaktuMasuk);
             this.PanelSelectPemesanan.Controls.Add(this.LabelKodePemesanan);
-            this.PanelSelectPemesanan.Location = new System.Drawing.Point(32, 514);
+            this.PanelSelectPemesanan.Location = new System.Drawing.Point(32, 501);
             this.PanelSelectPemesanan.Name = "PanelSelectPemesanan";
             this.PanelSelectPemesanan.Size = new System.Drawing.Size(1213, 278);
             this.PanelSelectPemesanan.TabIndex = 49;
@@ -528,7 +528,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DGV_Pemesanan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.DGV_Pemesanan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_Pemesanan.ColumnHeadersHeight = 29;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -542,7 +542,7 @@
             this.DGV_Pemesanan.Name = "DGV_Pemesanan";
             this.DGV_Pemesanan.RowHeadersWidth = 51;
             this.DGV_Pemesanan.RowTemplate.Height = 24;
-            this.DGV_Pemesanan.Size = new System.Drawing.Size(1213, 431);
+            this.DGV_Pemesanan.Size = new System.Drawing.Size(1213, 418);
             this.DGV_Pemesanan.TabIndex = 39;
             this.DGV_Pemesanan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Pemesanan_CellClick);
             // 
@@ -552,7 +552,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.GroupBoxPemesanan);
             this.Name = "TxtBoxKodePemesanan";
-            this.Size = new System.Drawing.Size(1275, 830);
+            this.Size = new System.Drawing.Size(1275, 817);
             this.Load += new System.EventHandler(this.Pemesanan_Load);
             this.GroupBoxPemesanan.ResumeLayout(false);
             this.PanelSelectPemesanan.ResumeLayout(false);
